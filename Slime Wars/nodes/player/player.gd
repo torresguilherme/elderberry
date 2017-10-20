@@ -17,21 +17,12 @@ var cur_direct = direct.DOWN
 onready var anim = get_node("anim")
 
 func _ready():
+	add_to_group(global.PLAYER_GROUP)
 	set_process(true)
 	pass
 
 func _process(delta):
 	# movement
-	if Input.is_action_pressed("move-up"):
-		up = 1
-		cur_direct = direct.UP
-	else:
-		up = 0
-	if Input.is_action_pressed("move-down"):
-		down = 1
-		cur_direct = direct.DOWN
-	else:
-		down = 0
 	if Input.is_action_pressed("move-left"):
 		left = 1
 		cur_direct = direct.LEFT
@@ -42,6 +33,16 @@ func _process(delta):
 		cur_direct = direct.RIGHT
 	else:
 		right = 0
+	if Input.is_action_pressed("move-up"):
+		up = 1
+		cur_direct = direct.UP
+	else:
+		up = 0
+	if Input.is_action_pressed("move-down"):
+		down = 1
+		cur_direct = direct.DOWN
+	else:
+		down = 0
 	
 	# position update
 	move(Vector2(-left+right, -up+down) * speed * delta)
@@ -77,3 +78,6 @@ func _process(delta):
 		elif cur_direct == direct.RIGHT:
 			if anim.get_current_animation() != "right-walk":
 				anim.set_current_animation("right-walk")
+
+func TakeDamage(value):
+	hp -= value
