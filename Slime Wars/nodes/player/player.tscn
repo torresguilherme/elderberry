@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 26.7108, 12.9041 )
+extents = Vector2( 33.7141, 22.3924 )
 
 [sub_resource type="Animation" id=2]
 
@@ -232,7 +232,6 @@ autoplay = "right-idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
-visibility/visible = false
 transform/pos = Vector2( 0, 10 )
 shape = SubResource( 1 )
 trigger = false

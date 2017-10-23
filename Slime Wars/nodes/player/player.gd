@@ -45,7 +45,8 @@ func _process(delta):
 		down = 0
 	
 	# position update
-	move(Vector2(-left+right, -up+down) * speed * delta)
+	move(Vector2(-left+right, 0) * speed * delta)
+	move(Vector2(0, -up+down) * speed * delta)
 	if (-left+right == 0) && (-up+down == 0):
 		moving = false
 	else:
