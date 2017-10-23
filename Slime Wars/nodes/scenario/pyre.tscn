@@ -12,7 +12,7 @@ extents = Vector2( 63.9666, 33.8406 )
 offsets = FloatArray( 0, 0.204678, 0.374269, 0.631579, 1 )
 colors = ColorArray( 0.980469, 0.0114899, 0.0114899, 1, 0.808594, 0.255153, 0.0126343, 1, 0.890625, 0.746844, 0.0904541, 1, 0.912258, 0.957031, 0.138321, 1, 1, 1, 1, 1 )
 
-[node name="wall0" type="StaticBody2D"]
+[node name="pyre" type="StaticBody2D"]
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
