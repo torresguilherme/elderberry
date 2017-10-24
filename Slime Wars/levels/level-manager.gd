@@ -31,7 +31,8 @@ func generate_rooms():
 			new_room.set_global_pos(Vector2(pos[0] * global.ROOM_WIDTH, pos[1] * global.ROOM_HEIGHT))
 			add_child(new_room)
 			room_list.append(new_room)
-		pos[randi()%2] += modifiers[randi() % modifiers.size()]
+		pos[randi()%2] += (randi()%3) - 1
+		print(pos[0], ' ', pos[1])
 	for it in level_matrix:
 		print(it)
 	# adiciona portas
@@ -44,34 +45,34 @@ func generate_rooms():
 			new_door.set_global_pos(it_positions.get_children()[0].get_pos())
 			it_doors.add_child(new_door)
 			print(new_door.get_global_pos())
-#		else:
-#			var new = not_door.instance()
-#			new.set_global_pos(it_positions.get_children()[0].get_pos())
-#			it_walls.add_child(new)
+		else:
+			var new = not_door.instance()
+			new.set_global_pos(it_positions.get_children()[0].get_pos())
+			it_walls.add_child(new)
 		if (it.get_global_pos().x != (level_dimension-1) * global.ROOM_WIDTH) && (level_matrix[it.get_global_pos().x/global.ROOM_WIDTH + 1][it.get_global_pos().y/global.ROOM_HEIGHT] == 1):
 			var new_door = door.instance()
 			new_door.set_global_pos(it_positions.get_children()[1].get_pos())
 			new_door.set_rot(deg2rad(90))
 			it_doors.add_child(new_door)
-#		else:
-#			var new = not_door.instance()
-#			new.set_global_pos(it_positions.get_children()[1].get_pos())
-#			it_walls.add_child(new)
+		else:
+			var new = not_door.instance()
+			new.set_global_pos(it_positions.get_children()[1].get_pos())
+			it_walls.add_child(new)
 		if (it.get_global_pos().y != (level_dimension-1) * global.ROOM_HEIGHT) && (level_matrix[it.get_global_pos().x/global.ROOM_WIDTH][it.get_global_pos().y/global.ROOM_HEIGHT + 1] == 1):
 			var new_door = door.instance()
 			new_door.set_global_pos(it_positions.get_children()[2].get_pos())
 			new_door.set_rot(deg2rad(180))
 			it_doors.add_child(new_door)
-#		else:
-#			var new = not_door.instance()
-#			new.set_global_pos(it_positions.get_children()[2].get_pos())
-#			it_walls.add_child(new)
+		else:
+			var new = not_door.instance()
+			new.set_global_pos(it_positions.get_children()[2].get_pos())
+			it_walls.add_child(new)
 		if (it.get_global_pos().x != 0) && (level_matrix[it.get_global_pos().x/global.ROOM_WIDTH - 1][it.get_global_pos().y/global.ROOM_HEIGHT] == 1):
 			var new_door = door.instance()
 			new_door.set_global_pos(it_positions.get_children()[3].get_pos())
 			new_door.set_rot(deg2rad(270))
 			it_doors.add_child(new_door)
-#		else:
-#			var new = not_door.instance()
-#			new.set_global_pos(it_positions.get_children()[3].get_pos())
-#			it_walls.add_child(new)
+		else:
+			var new = not_door.instance()
+			new.set_global_pos(it_positions.get_children()[3].get_pos())
+			it_walls.add_child(new)
