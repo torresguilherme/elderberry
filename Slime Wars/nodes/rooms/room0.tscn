@@ -149,21 +149,19 @@ drag_margin/bottom = 0.2
 
 [node name="positions" type="Node2D" parent="."]
 
-editor/display_folded = true
-
-[node name="Position2D" type="Position2D" parent="positions"]
+[node name="Position2D" type="Node2D" parent="positions"]
 
 transform/pos = Vector2( 0, -384 )
 
-[node name="Position2D1" type="Position2D" parent="positions"]
+[node name="Position2D1" type="Node2D" parent="positions"]
 
 transform/pos = Vector2( 640, 0 )
 
-[node name="Position2D2" type="Position2D" parent="positions"]
+[node name="Position2D2" type="Node2D" parent="positions"]
 
 transform/pos = Vector2( 0, 384 )
 
-[node name="Position2D3" type="Position2D" parent="positions"]
+[node name="Position2D3" type="Node2D" parent="positions"]
 
 transform/pos = Vector2( -640, 0 )
 
