@@ -31,10 +31,9 @@ func generate_rooms():
 			new_room.set_global_pos(Vector2(pos[0] * global.ROOM_WIDTH, pos[1] * global.ROOM_HEIGHT))
 			add_child(new_room)
 			room_list.append(new_room)
-		pos[randi()%2] += (randi()%3) - 1
-		print(pos[0], ' ', pos[1])
-	for it in level_matrix:
-		print(it)
+		var temp = randi()%2
+		var temp2 = modifiers[randi() % modifiers.size()]
+		pos[temp] += temp2
 	# adiciona portas
 	for it in room_list:
 		var it_positions = it.get_node("positions")
@@ -44,7 +43,6 @@ func generate_rooms():
 			var new_door = door.instance()
 			new_door.set_global_pos(it_positions.get_children()[0].get_pos())
 			it_doors.add_child(new_door)
-			print(new_door.get_global_pos())
 		else:
 			var new = not_door.instance()
 			new.set_global_pos(it_positions.get_children()[0].get_pos())

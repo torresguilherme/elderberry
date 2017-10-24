@@ -150,6 +150,8 @@ drag_margin/bottom = 0.2
 
 [node name="positions" type="Node2D" parent="."]
 
+editor/display_folded = true
+
 [node name="Position2D" type="Node2D" parent="positions"]
 
 transform/pos = Vector2( 0, -384 )
